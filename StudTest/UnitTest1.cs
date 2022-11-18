@@ -1,7 +1,7 @@
-using Microsoft.VisualBasic;
-using Приемная_комиссия.Genderi;
-using Приемная_комиссия.Haracteristika;
-using Приемная_комиссия;
+Kousing Microsoft.VisualBasic;
+using ГЏГ°ГЁГҐГ¬Г­Г Гї_ГЄГ®Г¬ГЁГ±Г±ГЁГї.Genderi;
+using ГЏГ°ГЁГҐГ¬Г­Г Гї_ГЄГ®Г¬ГЁГ±Г±ГЁГї.Haracteristika;
+using ГЏГ°ГЁГҐГ¬Г­Г Гї_ГЄГ®Г¬ГЁГ±Г±ГЁГї;
 using StudLib;
 
 namespace StudTest
@@ -12,10 +12,10 @@ namespace StudTest
         public void AddButton()
         {
             AbiturientNuget Abiturient = new();
-            var result = Abiturient.Get();
+          
             Abiturient mytest = new()
             {
-                FullName = "Нина",
+                FullName = "ГЌГЁГ­Г ",
                 Gender = Gender.Female,
                 Birthday = DateTime.Now.AddYears(-16),
                 FormaObucheniya = FormaObucheniya.Ochnoe,
@@ -26,6 +26,7 @@ namespace StudTest
 
             };
             Abiturient.Add(mytest);
+            var result = Abiturient.Get();
             Assert.Equal(mytest, result[0]);
         }
 
@@ -33,11 +34,10 @@ namespace StudTest
         public void ChangeButton()
         {
             AbiturientNuget Abiturient = new();
-            var result = Abiturient.Get();
             Abiturient list = new()
             {
 
-                FullName = "Нина",
+                FullName = "ГЌГЁГ­Г ",
                 Gender = Gender.Female,
                 Birthday = DateTime.Now.AddYears(-16),
                 FormaObucheniya = FormaObucheniya.Ochnoe,
@@ -49,7 +49,7 @@ namespace StudTest
             Abiturient.Add(list);
             Abiturient list2 = new()
             {
-                FullName = "Влад",
+                FullName = "Г‚Г«Г Г¤",
                 Gender = Gender.Male,
                 Birthday = DateTime.Now.AddYears(-16),
                 FormaObucheniya = FormaObucheniya.Ochnoe,
@@ -59,6 +59,7 @@ namespace StudTest
                 Sum = 100,
             };
             Abiturient.Update(0, list2);
+            var result = Abiturient.Get();
             Assert.Equal(list2, result[0]);
         }
 
@@ -66,10 +67,9 @@ namespace StudTest
         public void DeleteButton()
         {
             AbiturientNuget Abiturient = new();
-            var result = Abiturient.Get();
             Abiturient list = new()
             {
-                FullName = "Ирина",
+                FullName = "Г€Г°ГЁГ­Г ",
                 Gender = Gender.Female,
                 Birthday = DateTime.Now.AddYears(-16),
                 FormaObucheniya = FormaObucheniya.Ochnoe,
@@ -80,6 +80,7 @@ namespace StudTest
             };
             Abiturient.Add(list);
             Abiturient.Remove(list);
+            var result = Abiturient.Get();
             Assert.Empty(result);
         }
     }
